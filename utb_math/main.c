@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+const char *err_out_of_memory = "out of memory";
 array *ar;
 
 minmax(void);
@@ -20,8 +21,24 @@ int (*func[5])(void) =
     fibonacci,
 };
 
-/* getch is like getchar(), but eats CR and LF before. */
-getch();
+/* is_newline indicates if ch is new line. */
+is_newline(int ch)
+{
+    if(ch == '\n')
+        return 1;
+    return ch == '\r';
+}
+
+/* eat consumes one CR or LF in stdin. */
+void
+eat()
+{
+    int ch;
+
+    ch = getchar();
+    if(!is_newline(ch))
+        ungetc(ch, stdin);
+}
 
 /* fib returns fibonacci number for n */
 fib(int n);
@@ -41,12 +58,26 @@ test_fib()
 
 /* single returns number created from each digit stored in ar.
  * For ar storing [4, 1, 2, 3] it returns 4123. */
-single(array *ar);
+single(array *ar)
+{
+    int i, j, m, n;
+
+    m = 0;
+    for(i = 0; i < ar->len; i++) {
+        n = ar->p[i];
+        for(j = 0; j < ar->len-i-1; j++)
+            n *= 10;
+        m += n;
+    }
+    return m;
+}
 
 void
 test_single()
 {
-    array *ar = array_new(4);
+    array *ar;
+
+    ar = array_new(4);
     array_append(ar, 4);
     array_append(ar, 1);
     array_append(ar, 2);
@@ -59,19 +90,15 @@ main(void)
     int i, ch;
 
     assert('0'-48 == 0);
-
     test_fib();
     test_single();
-
     ar = array_new(10);
     if(!ar) {
-        fputs("not enough memory", stderr);
+        fputs(err_out_of_memory, stderr);
         exit(1);
     }
-    // atexit(free_ar); nope - need more than this
     for(i = 0; i < 10; i++)
         array_append(ar, i + 1);
-
 menu:
     puts("Stisknete:");
     puts("1 pro minmax");
@@ -80,7 +107,9 @@ menu:
     puts("4 pro faktorial");
     puts("5 pro Fibonacciho posloupnost");
     puts("cokoli jineho pro konec.");
-    ch = getch();
+    ch = getchar();
+    if(!is_newline(ch))
+        eat();
     switch(ch) {
     case '1':
     case '2':
@@ -99,28 +128,12 @@ menu:
     return 0;
 }
 
-/* single returns number created from each digit stored in ar.
- * For ar storing [4, 1, 2, 3] it returns 4123. */
-int
-single(array *ar)
-{
-    int i, j, m, n;
-    m = 0;
-    for(i = 0; i < ar->len; i++) {
-        n = ar->p[i];
-        for(j = 0; j < ar->len-i-1; j++)
-            n *= 10;
-        m += n;
-    }
-    return m;
-}
-
 /* alter_array prints current ar and asks for change of ar.
  * Returns 1 to indicate unexpected EOF. */
 int
 alter_array()
 {
-    int i, ch;
+    int i, ch, ok;
     array *na, *nb;
 
     puts("Aktualni obsah pole:");
@@ -131,28 +144,34 @@ alter_array()
             printf("%d\n", ar->p[i]);
     }
     puts("Zadat jine hodnoty? (A/N)");
-    switch(getch()) {
+    ch = getchar();
+    switch(ch) {
     case EOF:
         return 1;
     case 'A':
+    case 'a':
         break;
     default:
+        if(!is_newline(ch))
+            eat();
         return 0;
     }
+    eat();
     puts("Zadavejte hodnoty oddelene novym radkem, konec=K:");
     na = array_new(10);
     if(!na) {
-        fputs("not enough memory", stderr);
+        fputs(err_out_of_memory, stderr);
         array_free(ar);
         exit(1);
     }
     nb = array_new(10);
     if(!nb) {
-        fputs("not enough memory", stderr);
+        fputs(err_out_of_memory, stderr);
         array_free(na);
         array_free(ar);
         exit(1);
     }
+    ok = 1;
     for(;;) {
         ch = getchar();
         switch(ch) {
@@ -161,6 +180,8 @@ alter_array()
             array_free(nb);
             return 1;
         case 'K':
+        case 'k':
+            eat();
             goto out;
         case '-':
             break;
@@ -181,9 +202,16 @@ alter_array()
             break;
         case '\n':
         case '\r':
-            if(na->len > 0)
+            if(!ok)
+                puts("Nespravny format, zkuste znovu");
+            else if(na->len > 0)
                 array_append(nb, single(na));
             na->len = 0;
+            ok = 1;
+            break;
+        default:
+            ok = 0;
+            break;
         }
     }
 out:
@@ -196,17 +224,6 @@ out:
     array_free(na);
     array_free(nb);
     return 0;
-}
-
-/* num asks for integer and returns it. */
-int
-num()
-{
-    int N;
-
-    puts("Vlozte hodnotu N:");
-    scanf_s("%d", &N);
-    return N;
 }
 
 void
@@ -260,12 +277,64 @@ maximum(void)
     return 0;
 }
 
+/* yum asks for integer. Returns 0 to indicate that n is set and can be used.
+ * Returns 1 for unexpected EOF. */
+int
+yum(int *n)
+{
+    int ch;
+    array *in;
+
+    puts("Vlozte hodnotu N:");
+    in = array_new(5);
+    if(!in) {
+        fputs(err_out_of_memory, stderr);
+        array_free(ar);
+        exit(1);
+    }
+    for(;;) {
+        ch = getchar();
+        switch(ch) {
+        case EOF:
+            if(in->len > 0)
+                goto out;
+            array_free(in);
+            return 1;
+        case '-':
+            break;
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            /* Only one digit is stored then single()
+             * is used to get whole number.
+             * Silly, but seems simple. */
+            array_append(in, ch-48);
+            break;
+        case '\n':
+        case '\r':
+            goto out;
+        }
+    }
+out:
+    *n = single(in);
+    array_free(in);
+    return 0;
+}
+
 factorial(void)
 {
     int n, i;
     unsigned k = 1;
 
-    n = num();
+    if(yum(&n))
+        return 1;
     for(i = n; i >= 1; i--)
         k *= i;
     printf("Faktorial(%d)=%d\n", n, k);
@@ -283,21 +352,10 @@ fib(int n)
 
 fibonacci(void)
 {
-    int n = num();
+    int n;
+
+    if(yum(&n))
+        return 1;
     printf("Fibonacci(%d)=%d\n", n, fib(n));
     return 0;
-}
-
-getch()
-{
-    int ch;
-
-    for(;;) {
-        ch = getchar();
-        if(ch == '\n')
-            continue;
-        if(ch == '\r')
-            continue;
-        return ch;
-    }
 }

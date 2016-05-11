@@ -10,7 +10,7 @@ typedef struct {
 array *array_new(int cap);
 void array_free(array *ar);
 
-/* array_append adds n to ar and returns 0; returns 1 if not not enough memory. */
+/* array_append adds n to ar and returns 0; returns 1 if not enough memory. */
 int array_append(array *ar, int n);
 
 #endif // ARRAY_H
