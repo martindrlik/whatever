@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef ARRAY_H
+#define ARRAY_H
 
 typedef struct {
     int cap, len;
@@ -13,4 +13,4 @@ void array_free(array *ar);
 /* array_append adds n to ar and returns 0; returns 1 if not not enough memory. */
 int array_append(array *ar, int n);
 
-#endif // STRING_H
+#endif // ARRAY_H

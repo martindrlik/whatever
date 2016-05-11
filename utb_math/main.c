@@ -115,7 +115,8 @@ single(array *ar)
     return m;
 }
 
-/* alter_array prints current ar and asks for change of ar. */
+/* alter_array prints current ar and asks for change of ar.
+ * Returns 1 to indicate unexpected EOF. */
 int
 alter_array()
 {
@@ -130,8 +131,14 @@ alter_array()
             printf("%d\n", ar->p[i]);
     }
     puts("Zadat jine hodnoty? (A/N)");
-    if(getch() != 'A')
+    switch(getch()) {
+    case EOF:
+        return 1;
+    case 'A':
+        break;
+    default:
         return 0;
+    }
     puts("Zadavejte hodnoty oddelene novym radkem, konec=K:");
     na = array_new(10);
     if(!na) {
