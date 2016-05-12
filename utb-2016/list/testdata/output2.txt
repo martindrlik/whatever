@@ -1,0 +1,60 @@
+List test program
+Zadejte pismeno 0-A pro jednu z nasledujicich cinnosti:
+0: Init,
+1: Actualize,
+2: Insert_First,
+3: First,
+4: Copy_First,
+5: Delete_First,
+6: Post_Delete,
+7: Post_Insert,
+8: Copy,
+9: Succ,
+A: Is_Active,
+M: Vypis menu
+CTRL+Z (Win) nebo CTRL+D (Unix): Konec programu
+Vase volba=3
+First - nastaveni aktivni polozky na 1.prvek
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=6
+Post_Delete - vymaz prvek za aktivnim prvkem
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=A
+Is_Active - zjisteni, zda je seznam aktivni
+Is_Active=false
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=4
+Copy_First - Vypis 1.prvku seznamu
+Chyba: Chyba v List_Copy_First - first=NULL
+first=00000000, active=00000000

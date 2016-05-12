@@ -1,0 +1,318 @@
+List test program
+Zadejte pismeno 0-A pro jednu z nasledujicich cinnosti:
+0: Init,
+1: Actualize,
+2: Insert_First,
+3: First,
+4: Copy_First,
+5: Delete_First,
+6: Post_Delete,
+7: Post_Insert,
+8: Copy,
+9: Succ,
+A: Is_Active,
+M: Vypis menu
+CTRL+Z (Win) nebo CTRL+D (Unix): Konec programu
+Vase volba=0
+Init - inicializace seznamu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=2
+Insert_First - vlozeni nove polozky na 1. misto seznamu
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 288 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=2
+Insert_First - vlozeni nove polozky na 1. misto seznamu
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 576 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+2. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=2
+Insert_First - vlozeni nove polozky na 1. misto seznamu
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 864 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+2. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+3. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=2
+Insert_First - vlozeni nove polozky na 1. misto seznamu
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 1152 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Jana, vek=25.0, vaha=55.0, vyska=175.0
+2. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+3. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+4. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=3
+First - nastaveni aktivni polozky na 1.prvek
+Aktivni polozka:
+Jmeno=Jana, vek=25.0, vaha=55.0, vyska=175.0
+Obsah seznamu:
+1. prvek: Jmeno=Jana, vek=25.0, vaha=55.0, vyska=175.0
+2. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+3. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+4. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=1
+Actualize - prepis dat aktivni polozky
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+Aktivni polozka:
+Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+3. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+4. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=7
+Post_Insert - vloz novy prvek za aktivni prvek
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 1440 bajtu
+Aktivni polozka:
+Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=7
+Post_Insert - vloz novy prvek za aktivni prvek
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+myMalloc: prideluji 288 bajtu, celkove prideleno 1728 bajtu
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+6. prvek: Jmeno=Daniel, vek=60.0, vaha=80.0, vyska=195.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=8
+Copy - ziskani hodnoty aktivniho prvku 
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+6. prvek: Jmeno=Daniel, vek=60.0, vaha=80.0, vyska=195.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=6
+Post_Delete - vymaz prvek za aktivnim prvkem
+myFree: uvolnuji 288 bajtu, celkove prideleno 1440 bajtu
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=4
+Copy_First - Vypis 1.prvku seznamu
+Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Hana, vek=27.0, vaha=57.0, vyska=167.0
+2. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+3. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+4. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+5. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+myFree: uvolnuji 288 bajtu, celkove prideleno 1152 bajtu
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Roman, vek=50.0, vaha=90.0, vyska=190.0
+2. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+3. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+4. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+myFree: uvolnuji 288 bajtu, celkove prideleno 864 bajtu
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Alena, vek=20.0, vaha=60.0, vyska=170.0
+2. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+3. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+myFree: uvolnuji 288 bajtu, celkove prideleno 576 bajtu
+Aktivni polozka:
+Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+Obsah seznamu:
+1. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+2. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=3
+First - nastaveni aktivni polozky na 1.prvek
+Aktivni polozka:
+Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+Obsah seznamu:
+1. prvek: Jmeno=Pepa, vek=30.0, vaha=70.0, vyska=170.0
+2. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+myFree: uvolnuji 288 bajtu, celkove prideleno 288 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=6
+Post_Delete - vymaz prvek za aktivnim prvkem
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=7
+Post_Insert - vloz novy prvek za aktivni prvek
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=9
+Succ - posuv ukazatel aktivniho prvku na dalsi prvek
+Aktivni polozka:
+NULL
+Obsah seznamu:
+1. prvek: Jmeno=Franta, vek=40.0, vaha=80.0, vyska=180.0
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=5
+Delete_First - vymaz  1.prvek
+myFree: uvolnuji 288 bajtu, celkove prideleno 0 bajtu
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Konec souboru, koncime.

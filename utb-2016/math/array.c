@@ -27,7 +27,7 @@ array_free(array *ar)
     free(ar);
 }
 
-/* array_append adds n to ar and returns 0; returns 1 if not enough memory. */
+/* array_append adds n to ar and returns 0; returns 1 if not not enough memory. */
 int
 array_append(array *ar, int n)
 {

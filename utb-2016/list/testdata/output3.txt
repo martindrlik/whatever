@@ -1,0 +1,37 @@
+List test program
+Zadejte pismeno 0-A pro jednu z nasledujicich cinnosti:
+0: Init,
+1: Actualize,
+2: Insert_First,
+3: First,
+4: Copy_First,
+5: Delete_First,
+6: Post_Delete,
+7: Post_Insert,
+8: Copy,
+9: Succ,
+A: Is_Active,
+M: Vypis menu
+CTRL+Z (Win) nebo CTRL+D (Unix): Konec programu
+Vase volba=1
+Actualize - prepis dat aktivni polozky
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=7
+Post_Insert - vloz novy prvek za aktivni prvek
+Zadejte jmeno osoby: Zadejte vek, vahu a vysku (oddelene Enter):
+Aktivni polozka:
+NULL
+Obsah seznamu:
+
+Zadejte znak 0-A, EOF(tj. CTRL+Z nebo CTRL+D)=Konec, M=Menu:
+************************************************************
+Vase volba=8
+Copy - ziskani hodnoty aktivniho prvku 
+Chyba: List_Copy error
+first=00000000, active=00000000
