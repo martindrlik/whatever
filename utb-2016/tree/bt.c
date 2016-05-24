@@ -27,6 +27,7 @@ btinsert(int key, struct btnode **leaf, struct btdata data)
 {
     if(!*leaf) {
         *leaf = malloc(sizeof(struct btnode));
+        (*leaf)->key = key;
         strcpy((*leaf)->data.name,  data.name);
         (*leaf)->data.age = data.age;
         (*leaf)->data.weight = data.weight;
