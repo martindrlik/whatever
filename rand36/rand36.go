@@ -19,7 +19,7 @@ func main() {
 	flag.Parse()
 	r, err := os.Open(*source)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "could not source file: %v\n", err)
+		fmt.Fprintf(os.Stderr, "could not open source file %s: %v\n", *source, err)
 		return
 	}
 	defer r.Close()
