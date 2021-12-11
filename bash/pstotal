@@ -1,0 +1,5 @@
+#!/bin/bash
+for name in $(ps -eo user | sort | uniq)
+do
+	echo $name has `ps -u $name | sed "1d" | wc -l` running processes
+done

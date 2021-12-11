@@ -1,0 +1,29 @@
+#!/bin/bash
+
+for name in $1.*
+do
+	if [[ ! -f $name ]]
+	then
+		break
+	fi
+	if echo $name | awk -v FS=. -v max=$2 '$2<max {exit 1}'
+	then
+		rm $name
+	else
+		mv $name .rotate.`echo $name | awk -v FS=. '{print ($2+1)}'`
+	fi
+done
+
+if [[ -f $1 ]]
+then
+	mv $1 $1.0
+fi
+
+for name in .rotate.*
+do
+	if [[ ! -f $name ]]
+	then
+		break
+	fi
+	mv $name $1.`echo $name | awk -v FS=. '{print $3}'`
+done
