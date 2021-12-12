@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for user in $(ps -eo user | sort | uniq)
+do
+	total=`ps -u $user | sed "1d" | wc -l`
+	if ((total > $1))
+	then
+		echo $user $total
+	fi
+done
